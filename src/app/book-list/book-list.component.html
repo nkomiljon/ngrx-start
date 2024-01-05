@@ -1,0 +1,14 @@
+
+@for (book of books; track $index) {
+    <div class="book-item"> 
+        <p class="book-title">{{ book.volumeInfo.title }}</p>
+        <span class="book-author">by {{ book.volumeInfo.authors }}</span>
+
+        <button
+            class="btn"
+            (click)="add.emit(book.id)"
+            data-test="add-button">
+            Add to Collection
+        </button>
+    </div>
+}
